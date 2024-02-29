@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Marcas
+{% endblock %}
+
+{% block conteudo %}
+<body class="text-center">
+    <div class="container">
+        <img class="mb-4" src="{{ url_for('static', filename='qual-a-marca.jpg') }}" style="width: 200px;">
+        <h1 class="h3 mb-3 font-weight-normal">
+            Cadastre aqui a Marca dos Produtos
+        </h1>
+        <form method="POST" class="form-register" style="color: whitesmoke;">
+
+            {{ form.hidden_tag () }}
+
+            {{ form.nome.label() }}
+            {{ form.nome(class="form-control", placeholder="Informe o nome da marca") }}
+            
+            {{ form.apelido.label() }}
+            {{ form.apelido(class="form-control", placeholder="Informe o apelido da marca")}}
+
+            <br>
+            <div class="d-grid">
+                {{ form.submit(class="btn btn-lg btn-success") }}
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}
